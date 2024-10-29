@@ -33,9 +33,22 @@
 		B64572DA2CD1148200D83DB0 /* TCATutorialsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCATutorialsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B6AF12CE2CD12427000D32A5 /* Exceptions for "TCATutorials" folder in "TCATutorials" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B64572BF2CD1148100D83DB0 /* TCATutorials */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B64572C22CD1148100D83DB0 /* TCATutorials */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B6AF12CE2CD12427000D32A5 /* Exceptions for "TCATutorials" folder in "TCATutorials" target */,
+			);
 			path = TCATutorials;
 			sourceTree = "<group>";
 		};
@@ -408,6 +421,7 @@
 				DEVELOPMENT_TEAM = YB84RUQ65P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCATutorials/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +451,7 @@
 				DEVELOPMENT_TEAM = YB84RUQ65P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCATutorials/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
