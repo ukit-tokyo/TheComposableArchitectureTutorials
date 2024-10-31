@@ -32,13 +32,15 @@ struct ContactsFeature {
     }
   }
 
+  @Dependency(\.uuid) var uuid
+
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .addButtonTapped:
         state.destination = .addContact(
           AddContactFeature.State(
-            contact: Contact(id: UUID(), name: "")
+            contact: Contact(id: self.uuid(), name: "")
           )
         )
         return .none
@@ -56,13 +58,7 @@ struct ContactsFeature {
 
       case .deleteButtonTapped(let id):
         state.destination = .alert(
-          AlertState {
-            TextState("Are you sure?")
-          } actions: {
-            ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
-              TextState("Delete")
-            }
-          }
+          .deleteConfirmation(id: id)
         )
         return .none
       }
@@ -79,6 +75,18 @@ extension ContactsFeature {
   }
 }
 extension ContactsFeature.Destination.State: Equatable {}
+
+extension AlertState where Action == ContactsFeature.Action.Alert {
+  static func deleteConfirmation(id: UUID) -> Self {
+    Self {
+      TextState("Are you sure?")
+    } actions: {
+      ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+        TextState("Delete")
+      }
+    }
+  }
+}
 
 // MARK: -
 
